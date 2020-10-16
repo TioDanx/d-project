@@ -1,18 +1,11 @@
 import React from 'react';
-import Title from './components/Title.js';
-import ReactLink from './components/ReactLink.js';
-import Img from './components/Img.js';
-import logo from './logo.svg';
+import NavBar from './components/NavBar.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Img />
-        <Title />
-        <ReactLink />
-      </header>
+      <NavBar />
     </div>
   );
 }
