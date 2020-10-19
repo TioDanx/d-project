@@ -1,6 +1,6 @@
 import React from 'react';
 import carro from '../cart.svg';
-import '../App.css';
+import './NavBar.css';
 
 function NavBar() {
     return <>
