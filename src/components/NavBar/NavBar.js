@@ -1,5 +1,5 @@
 import React from 'react';
-import carro from '../cart.svg';
+import CartWidget from '../CartWidget/CartWidget.js'
 import './NavBar.css';
 
 function NavBar() {
@@ -11,9 +11,7 @@ function NavBar() {
             <a href="#">Destacados</a>
             <a href="#">Soporte</a>
         </div>
-        <div className="iconos-compra">
-            <a href="#"><img width="40" height="40" src={carro} alt="Carrito" /></a>
-        </div>
+        <CartWidget />
     </div>
     </>;
 }
