@@ -2,14 +2,16 @@ import React from 'react';
 import './ItemListContainer.css'
 
 
-function ItemListContainer() {
+function ItemListContainer({titulo}) {
     return <div className="itemList">
+        <div className="itemTitle"><h1>{titulo}</h1></div>
+        
         <div className="itemImage">
             <img src="#" alt=""/>
         </div>
 
         <div className="itemText">
-            <h1 className="titulo">Nombre del Item</h1>
+            <h1 className="itemName">Nombre del item</h1>
             <br/>
             <hr/>
             <br/>
