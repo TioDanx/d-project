@@ -1,0 +1,44 @@
+.itemCount{
+    
+    float: left;
+    background-color: red;
+    margin: 20px 0 0 40px;
+    height: 60px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.cantItems{
+    margin: auto 11px auto 10px;
+}
+
+.cantItems{
+    font-size: 20px;
+}
+
+.button {
+	background-color:#637aad;
+    border:none;
+    display: inline-block;
+	cursor:pointer;
+	color:#ffffff;
+    font-size:20px;
+    height: 60px;
+    width: 90px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.button:hover {
+	background-color:#5972a7;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+.upper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lower{
+    display: flex;
+}

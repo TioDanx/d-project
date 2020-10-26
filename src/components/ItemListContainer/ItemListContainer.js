@@ -1,6 +1,6 @@
 import React from 'react';
 import './ItemListContainer.css'
-
+import ItemCount from '../ItemCount/ItemCount';
 
 function ItemListContainer({titulo}) {
     return <div className="itemList">
