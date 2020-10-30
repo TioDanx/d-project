@@ -19,8 +19,6 @@ function ItemCount({ onAdd, initial, available }) {
     
     return <div className="itemCount">
         <div className="upper">
-            <p>stock: {available}</p>
-            <p>initial: {initial}</p>
             <button onClick={handleClick(false)} className="button">-</button>
             <p className="cantItems">{items}</p>
             <button onClick={handleClick(true)} className="button">+</button>
