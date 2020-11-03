@@ -16,17 +16,16 @@ function ItemCount({ onAdd, initial, available }) {
     }
     
     return <div className="itemCount">
-        <div className="upper">
-            <button onClick={handleClick(false)} className="button">-</button>
-            <p className="cantItems">{items}</p>
-            <button onClick={handleClick(true)} className="button">+</button>
-        </div>
-        <div className="lower">
-            
-            <button onClick={onAdd(items)} className="button">Agregar</button>
-        </div>
-        
-    </div>
+                <div className="upper">
+                    <button onClick={handleClick(false)} className="button">-</button>
+                    <p className="cantItems">{items}</p>
+                    <button onClick={handleClick(true)} className="button">+</button>
+                </div>
+                <div className="lower">
+                    
+                    <button onClick={onAdd(items)} className="add-button">Agregar</button>
+                </div>
+            </div>
 }
 
 export default ItemCount;

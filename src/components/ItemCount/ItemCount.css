@@ -1,42 +1,60 @@
 .itemCount{
-    display: block;
-    margin: 20px 0 0 40px;
-    height: 80px;
-    width: 10%;
+    display: flex;
+    flex-direction: column;
     font-family: 'Montserrat', sans-serif !important;
 }
 
 .cantItems{
-    margin: auto 11px auto 10px;
     font-size: 20px;
+    margin: 0 20px 0 20px;
 }
 
-.button {
-	background-color:#637aad;
-    border:none;
-    display: inline-block;
-	cursor:pointer;
-    color:#ffffff;
-    width: 100%;
-    height: 40px;
-    font-size:20px;
-    font-family: 'Montserrat', sans-serif !important;
-}
-.button:hover {
-	background-color:#5972a7;
-}
-.button:active {
-	position:relative;
-	top:1px;
-}
+
 .upper{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .lower{
     display: flex;
     justify-content: center;
+}
+
+.button {
+	background-color:#000000;
+    border:none;
+    display: inline-block;
+	cursor:pointer;
+    color:#bc6ff1;
+    width:56px;
+    height: 80px;
+    font-size:20px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.button:hover {
+    background-color:#52057b;
+}
+.button:active {
+    position:relative;
+    top:1px;
+}
+.add-button{
+    background-color:#000000;
+    border:none;
+    display: inline-block;
+	cursor:pointer;
+    color:#bc6ff1;
+    width: 160px;
+    height: 80px;
+    font-size:20px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.add-button:hover {
+	background-color:#52057b;
+}
+.add-button:active {
+	position:relative;
+	top:1px;
 }

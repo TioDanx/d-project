@@ -1,22 +1,21 @@
 .item-container{
-    background-color: blue;
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     margin: 40px 60px 0 60px;
     height: auto;
     border-radius: 30px;
     font-family: 'Montserrat', sans-serif;
-    color: #f1f6f9;
     justify-content: center;
+}
+hr{
+    border-color: #bc6ff1;
 }
 
 .itemTitle{
     display: flex;
-    color: #394867;
+    color: #bc6ff1;
     font-size: 25px;
     justify-content: center;
-}
-
-.itemTitle h1{
-    margin-top: 10px;
+    margin: 20px 0 20px 0;
 }

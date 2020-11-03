@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetails from './ItemDetails';
 import { useParams } from 'react-router-dom';
+import './ItemDetailsContainer.css'
 
 const ItemDetailsContainer = ({itemsPromise}) => {
 
@@ -16,7 +17,9 @@ const ItemDetailsContainer = ({itemsPromise}) => {
             setItem(aux[0])});
     }, []);
 
-    return <ItemDetails name={item.name} photo={item.photo} price={item.price}></ItemDetails>
+    return <div className="item-detail-container">
+            <ItemDetails description={item.description} name={item.name} photo={item.photo} price={item.price}></ItemDetails>
+        </div>
 }
 
 export default ItemDetailsContainer;

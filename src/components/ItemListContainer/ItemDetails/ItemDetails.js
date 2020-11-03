@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import ItemCount from '../../ItemCount/ItemCount';
 import './ItemDetails.css';
 
-const ItemDetails = ({photo, name, price}) => {
+const ItemDetails = ({description, photo, name, price}) => {
     
     let available = 10; 
     const handleAdd = (counter) => {
@@ -20,15 +20,21 @@ const ItemDetails = ({photo, name, price}) => {
         
     }, []);
 
-    return <div className="item-detail-container">
-        <div className="image">
-            <img src={photo} alt={name}/>
-        </div>
-        <div className="item-detail-description">
-            <h1>{name}</h1>
-            <ItemCount onAdd={handleAdd} {...{available}} initial={1}></ItemCount>
-        </div>
-    </div>;
+    return <div className="item-detail-box">
+                <div className="item-detail-image">
+                    <img src={photo} alt={name}/>
+                </div>
+                <div className="item-detail-description">
+                    <div className="item-detail-left">
+                        <h1>{name}</h1>
+                        <p>{description}</p>
+                    </div>
+                    <div className="item-detail-right">
+                        <h2>${price}</h2>
+                        <ItemCount onAdd={handleAdd} {...{available}} initial={1}></ItemCount>
+                    </div>
+                </div>
+            </div>;
 
 }
 
