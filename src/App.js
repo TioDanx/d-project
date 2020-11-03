@@ -21,11 +21,14 @@ function App() {
     <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path="/">
-            <ItemListContainer items={items} onFetch={setItems} {...{itemsPromise}} titulo="DESTACADO"/>
-          </Route>
           <Route path="/item/:id">
             <ItemDetailsContainer {...{itemsPromise}}></ItemDetailsContainer>
+          </Route>
+          <Route path="/cart">
+            
+          </Route>
+          <Route exact path="/">
+            <ItemListContainer items={items} onFetch={setItems} {...{itemsPromise}} titulo="DESTACADO"/>
           </Route>
         </Switch>
     </BrowserRouter>
