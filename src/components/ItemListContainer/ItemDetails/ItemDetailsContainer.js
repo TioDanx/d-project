@@ -12,11 +12,11 @@ const ItemDetailsContainer = ({itemsPromise}) => {
     useEffect(() => {
         itemsPromise.then(itemArray => { 
             let aux = itemArray.filter(item => item.id == id);
-            console.log(aux);
-            setItem(aux)});
+            console.log(aux[0]);
+            setItem(aux[0])});
     }, []);
 
-    return <ItemDetails {...{item}}></ItemDetails>
+    return <ItemDetails name={item.name} photo={item.photo} price={item.price}></ItemDetails>
 }
 
 export default ItemDetailsContainer;

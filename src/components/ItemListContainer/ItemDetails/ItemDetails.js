@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ItemCount from '../../ItemCount/ItemCount';
 import './ItemDetails.css';
 
-const ItemDetails = ({item}) => {
+const ItemDetails = ({photo, name, price}) => {
     
     let available = 10; 
     const handleAdd = (counter) => {
@@ -15,12 +15,17 @@ const ItemDetails = ({item}) => {
         }
     }
 
+    useEffect(() => {
+        console.log("itemDetails montado");
+        
+    }, []);
+
     return <div className="item-detail-container">
         <div className="image">
-            <img src={item.photo} alt={item.name}/>
+            <img src={photo} alt={name}/>
         </div>
         <div className="item-detail-description">
-            <h1>{item.name}</h1>
+            <h1>{name}</h1>
             <ItemCount onAdd={handleAdd} {...{available}} initial={1}></ItemCount>
         </div>
     </div>;
