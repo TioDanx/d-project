@@ -14,8 +14,6 @@ function ItemCount({ onAdd, initial, available }) {
             }
         }
     }
-
-    
     
     return <div className="itemCount">
         <div className="upper">
