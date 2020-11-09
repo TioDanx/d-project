@@ -9,11 +9,12 @@ function ItemCount({ onAdd, initial, available }) {
             if (op && items < available) {
                 setItems(items+1);
             }
-            else if (!op && items > 0){
+            else if (!op && items > 1){
                 setItems(items-1);
             }
         }
     }
+    
     
     return <div className="itemCount">
                 <div className="upper">

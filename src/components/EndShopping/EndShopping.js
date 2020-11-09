@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import './EndShopping.css';
 
 const EndShopping = () => {
-    return <Link to="/cart"><div className="end-shopping"><button>Terminar mi compra</button></div></Link>
+    return <Link to="/cart"><button className="end-shopping">Terminar mi compra</button></Link>;
 }
 
 export default EndShopping;

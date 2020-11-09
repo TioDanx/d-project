@@ -7,13 +7,13 @@ const ItemDetails = ({description, photo, name, price}) => {
     const [clicked, setclicked] = useState(false);
     
     let available = 10; 
+    
     const handleAdd = (counter) => {
-        
-
-        return () => {
-            setclicked(true);
-            if(counter <= available){
-            alert(`se van a agregar ${counter} items a su carrito` );
+        return (evt) => {
+            evt.stopPropagation();
+            if(counter <= available && counter > 0){
+                alert(`se van a agregar ${counter} items a su carrito` );
+                setclicked(true);
             }
             else alert("Por favor quite items" );
         }
