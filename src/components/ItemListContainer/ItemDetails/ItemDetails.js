@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemCount from '../../ItemCount/ItemCount';
 import './ItemDetails.css';
 
 const ItemDetails = ({description, photo, name, price}) => {
-    
+    const [clicked, setclicked] = useState(false);
     let available = 10; 
     const handleAdd = (counter) => {
+        setclicked(true);
 
         return () => {
             if(counter <= available){
@@ -31,7 +32,7 @@ const ItemDetails = ({description, photo, name, price}) => {
                     </div>
                     <div className="item-detail-right">
                         <h2>${price}</h2>
-                        <ItemCount onAdd={handleAdd} {...{available}} initial={1}></ItemCount>
+                        { !clicked && <ItemCount onAdd={handleAdd} {...{available}} initial={1} />}
                     </div>
                 </div>
             </div>;
