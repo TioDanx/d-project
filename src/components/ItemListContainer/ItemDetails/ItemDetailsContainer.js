@@ -13,7 +13,6 @@ const ItemDetailsContainer = ({itemsPromise}) => {
     useEffect(() => {
         itemsPromise.then(itemArray => { 
             let aux = itemArray.filter(item => item.id == id);
-            console.log(aux[0]);
             setItem(aux[0])});
     }, []);
 
