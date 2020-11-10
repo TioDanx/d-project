@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import EndShopping from '../../EndShopping/EndShopping';
+import EndShopping from '../EndShopping/EndShopping';
 import './ItemDetails.css';
 
 const ItemDetails = ({description, photo, name, price}) => {

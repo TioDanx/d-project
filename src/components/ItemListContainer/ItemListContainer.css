@@ -1,5 +1,5 @@
 .item-container{
-    background-color: #000000;
+    background-color: white;
     display: flex;
     flex-direction: column;
     margin: 40px 60px 0 60px;
@@ -9,12 +9,12 @@
     justify-content: center;
 }
 hr{
-    border-color: #bc6ff1;
+    border-color: black;
 }
 
 .itemTitle{
     display: flex;
-    color: #bc6ff1;
+    color: black;
     font-size: 25px;
     justify-content: center;
     margin: 20px 0 20px 0;

@@ -12,6 +12,6 @@
 }
 
 .cart:hover{
-  filter: invert(70%);
+  filter: invert(100%);
   transition: 300ms;
 }

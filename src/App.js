@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailsContainer from './components/ItemListContainer/ItemDetails/ItemDetailsContainer';
+import ItemDetailsContainer from './components/ItemDetails/ItemDetailsContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     {name:"Batidora", description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quaerat, tempora voluptates repellendus dolorum eveniet tenetur porro rem! Voluptate amet error deleniti assumenda quo! Totam expedita culpa delectus obcaecati veritatis.", photo: "https://http2.mlstatic.com/batidora-planetaria-amasadora-bowl-5-lts-winco-vintage-700-w-D_Q_NP_874813-MLA40832749202_022020-F.webp", price: 20, id: 3},
     {name:"Pava Electrica", description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quaerat, tempora voluptates repellendus dolorum eveniet tenetur porro rem! Voluptate amet error deleniti assumenda quo! Totam expedita culpa delectus obcaecati veritatis.", photo: "https://www.tienda.philips.com.ar/1940-large_default/pava-electrica-philips-viva-collection-blanca-con-termostato.jpg", price: 20, id: 4}];
   
-  const itemsPromise = new Promise((res) => {setTimeout(() => {res(products)}, 2000)});
+  const itemsPromise = new Promise((res) => {setTimeout(() => {res(products)}, 4000)});
 
 
   return (

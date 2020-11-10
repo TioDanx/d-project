@@ -5,7 +5,7 @@
   
   
   .navbar{
-    background-color: #000000;
+    background-color: white;
     height: 110px;
     display: inline-flexbox;
     top: 0 !important; 
@@ -19,14 +19,14 @@
   }
   .navtext a{
     text-decoration: none;
-    color: #bc6ff1;
+    color: black;
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     margin-right: 3%;
   }
   
   .navtext a:hover{
-    color: #892cdc;
+    color: grey;
     transition: 200ms;
   }
   
