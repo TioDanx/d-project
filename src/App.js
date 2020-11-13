@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailsContainer from './components/ItemDetails/ItemDetailsContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CartProvider, { useCartContext, CartContext } from './context/CartContext';
 
 function App() {
 
@@ -18,20 +19,22 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route path="/item/:id">
-            <ItemDetailsContainer {...{itemsPromise}}></ItemDetailsContainer>
-          </Route>
-          <Route path="/cart">
-            
-          </Route>
-          <Route exact path="/">
-            <ItemListContainer items={items} onFetch={setItems} {...{itemsPromise}} titulo="DESTACADO"/>
-          </Route>
-        </Switch>
-    </BrowserRouter>
+    <CartProvider defaultCart={[]}>
+      <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <Route path="/item/:id">
+              <ItemDetailsContainer {...{itemsPromise}}></ItemDetailsContainer>
+            </Route>
+            <Route path="/cart">
+              
+            </Route>
+            <Route exact path="/">
+              <ItemListContainer items={items} onFetch={setItems} {...{itemsPromise}} titulo="DESTACADO"/>
+            </Route>
+          </Switch>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

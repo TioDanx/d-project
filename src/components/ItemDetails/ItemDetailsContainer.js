@@ -17,7 +17,7 @@ const ItemDetailsContainer =  ({itemsPromise}) => {
     }, []);
 
     return <div className="item-detail-container">
-            { loaded && <ItemDetails description={item.description} name={item.name} photo={item.photo} price={item.price} /> }
+            { loaded && <ItemDetails {...{item}} /> }
             { !loaded && <Loading /> } 
         </div>
 }
