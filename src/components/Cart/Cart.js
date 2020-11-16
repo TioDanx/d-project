@@ -26,10 +26,10 @@ const Cart = () => {
                 </div>
                 <div className="cart-item-rightpart">
                     <h2>${obj.item.price}</h2>
-                    <button className="button" /* onClick={removeFromCart(obj.item.id) }*/ >Borrar del carro</button>
+                    <button className="button" onClick={() => removeFromCart(obj.item.id, obj.cant)} >Borrar del carro</button>
                 </div>
             </div>)}
-            {console.log(cart)}
+            {console.log("este es el carro que recibe Cart.js", cart)}
             <div className="cart-bottom">
                 {cart.map(obj => { total = obj.item.price * obj.cant + total })}
                 <h1>Total: ${total}</h1>

@@ -25,8 +25,9 @@ export default function CartProvider({ children, defaultCart }) {
         setcantItems(cantItems + qnt);
     }
 
-    function removeFromCart(itemID) {
-        setCart(cart.filter(item => item.id !== itemID));
+    function removeFromCart(itemID, qnt) {
+        setCart(cart.filter(obj => obj.item.id !== itemID));
+        setcantItems(cantItems - qnt);
     }
 
     function clearCart() {
