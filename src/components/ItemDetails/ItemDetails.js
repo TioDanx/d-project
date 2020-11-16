@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import EndShopping from '../EndShopping/EndShopping';
 import './ItemDetails.css';
-import {useCartContext} from '../../context/CartContext';
+import {useCartContext, CartContext} from '../../context/CartContext';
 
 const ItemDetails = ({item}) => {
     const [clicked, setclicked] = useState(false);
-    const {add} = useCartContext();
+    const {addToCart} = useCartContext();
+    
     let available = 10; 
     
     const handleAdd = (counter) => {
         return (evt) => {
             evt.stopPropagation();
             if(counter <= available && counter > 0){
-                alert(`se van a agregar ${counter} items a su carrito` );
-                add(item);
+                addToCart(item, counter);
                 setclicked(true);
             }
             else alert("Por favor quite items" );
