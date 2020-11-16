@@ -17,9 +17,9 @@ export default function CartProvider({ children, defaultCart }) {
                 const newCart = cart;
                 newCart[aux].cant = newCart[aux].cant + qnt;
                 setCart(newCart);
-            } 
+            }
             else setCart([...cart, { item, cant: qnt }]);
-        } 
+        }
         else setCart([{ item, cant: qnt }]);
 
         setcantItems(cantItems + qnt);
@@ -34,6 +34,6 @@ export default function CartProvider({ children, defaultCart }) {
         setcantItems(0);
     }
 
-    return <CartContext.Provider value = {{ cart, cantItems, addToCart, removeFromCart, clearCart }}> { children } 
-        </CartContext.Provider>
+    return <CartContext.Provider value={{ cart, cantItems, addToCart, removeFromCart, clearCart }}> {children}
+    </CartContext.Provider>
 }

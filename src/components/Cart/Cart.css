@@ -10,34 +10,37 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .cart-item img {
     width: 300px !important;
     height: 300px;
 }
-.cart-item-midpart{
+
+.cart-item-midpart {
     width: 60%;
     display: flex;
     flex-direction: column;
 }
 
-.cart-item-rightpart{
+.cart-item-rightpart {
     display: flex;
     width: 12%;
     flex-direction: column;
     align-items: center;
 }
 
-.cart-item-rightpart button{
+.cart-item-rightpart button {
     margin-top: 20px;
 }
 
-.cart-bottom{
+.cart-bottom {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     margin: 40px 0 40px 0;
 }
-.cart-bottom button{
+
+.cart-bottom button {
     width: 80%;
 }

@@ -41,7 +41,7 @@ function App() {
       id: 4
     }];
 
-  const itemsPromise = new Promise((res) => { setTimeout(() => { res(products) }, 0) });
+  const itemsPromise = new Promise((res) => { setTimeout(() => { res(products) }, 2000) });
 
 
   return (
