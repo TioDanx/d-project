@@ -3,6 +3,8 @@ import ItemDetails from './ItemDetails';
 import { useParams } from 'react-router-dom';
 import './ItemDetailsContainer.css';
 import Loading from '../Loading/Loading';
+import { getFirestore } from '../../firebase';
+
 
 const ItemDetailsContainer = ({ itemsPromise }) => {
     const [loaded, setloaded] = useState(false);
@@ -10,11 +12,16 @@ const ItemDetailsContainer = ({ itemsPromise }) => {
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        itemsPromise.then(itemArray => {
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        const item = itemCollection.doc(id);
+
+        item.get().then(doc => {
+            setItem({ id: doc.id, ...doc.data() });
+        }).finally(() => {
             setloaded(true);
-            let aux = itemArray.filter(item => item.id == id);
-            setItem(aux[0])
         });
+
     }, []);
 
     return <div className="item-detail-container">

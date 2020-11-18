@@ -2,11 +2,10 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin: 40px 60px 0 60px;
+    margin: 40px 0 0 0;
     height: auto;
-    border-radius: 30px;
     font-family: 'Montserrat', sans-serif;
-    justify-content: center;
+    justify-content: space-around;
 }
 hr{
     border-color: black;
@@ -14,8 +13,6 @@ hr{
 
 .itemTitle{
     display: flex;
-    color: black;
-    font-size: 25px;
     justify-content: center;
-    margin: 20px 0 20px 0;
+    align-items: center;
 }

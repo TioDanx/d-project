@@ -7,11 +7,7 @@ const Cart = () => {
     const { removeFromCart, clearCart, cart } = useCartContext();
     const [loading, setLoading] = useState(true);
     let total = 0;
-
-    const handleRemove = (itemID) => {
-
-        removeFromCart(itemID);
-    }
+    
     setTimeout(() => {
         setLoading(false)
     }, 1500);
