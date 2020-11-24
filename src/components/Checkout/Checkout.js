@@ -56,7 +56,13 @@ export default function Checkout() {
 
     return <>
         {loading && <Loading />}
-        {!checked && !loading && <> <div className="checkout-container">
+        { empty && <div className="succesfull-bought">
+            <h3>¡Ups! El carro esta vacio</h3>
+            <img src="https://media.tenor.com/images/5bcb10b227fc02ea17809549df02663e/tenor.gif" width="400" height="400" alt=""/>
+            <Link to="/">¡Empeza a comprar aca!</Link>
+        </div>
+        }
+        {!checked && !loading && !empty && <> <div className="checkout-container">
             <h3>Para terminar su compra, por favor rellene este formulario</h3>
             <br />
             <div className="checkout-form">
@@ -82,7 +88,7 @@ export default function Checkout() {
                 </div>
                 {cart.map(obj => { total = obj.item.price * obj.cant + total })}
                 <p>total: {total}</p>
-                <button className="button" onClick={createOrder}>nasheee</button>
+                <button className="button" onClick={createOrder}>Comprar</button>
             </div>
 
 
