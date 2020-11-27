@@ -5,7 +5,7 @@ import { getFirestore } from '../../firebase';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import './Checkout.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Checkout() {
     const [checked, setChecked] = useState(false);
@@ -13,6 +13,7 @@ export default function Checkout() {
     const [orderID, setOrderID] = useState();
     const [loading, setLoading] = useState(false);
     const { cart } = useCartContext();
+
     let total = 0;
 
 
@@ -23,7 +24,7 @@ export default function Checkout() {
         console.log("total", total);
     }, []);
 
-    function createOrder() {
+    async function createOrder() {
         setLoading(true);
         const buyer = {
             name: document.getElementById("fname").value,
@@ -44,13 +45,19 @@ export default function Checkout() {
         const db = getFirestore();
 
         const orders = db.collection("orders");
+        try {
+            await orders.add(newOrder).then(id => {
+                console.log('Order created with id: ', id.id);
+                setOrderID(id.id);
+                setChecked(true);
+                setLoading(false);
+            });
 
-        orders.add(newOrder).then(id => {
-            console.log('Order created with id: ', id.id);
-            setOrderID(id.id);
-            setChecked(true);
-            setLoading(false);
-        });
+        }
+        catch (err) {
+            console.log("No se pudo añadir la compra a la base de datos, intente nuevamente. Error:", err)
+        }
+
     }
 
 
@@ -58,7 +65,7 @@ export default function Checkout() {
         {loading && <Loading />}
         { empty && <div className="succesfull-bought">
             <h3>¡Ups! El carro esta vacio</h3>
-            <img src="https://media.tenor.com/images/5bcb10b227fc02ea17809549df02663e/tenor.gif" width="400" height="400" alt=""/>
+            <img src="https://media.tenor.com/images/5bcb10b227fc02ea17809549df02663e/tenor.gif" width="400" height="400" alt="" />
             <Link to="/">¡Empeza a comprar aca!</Link>
         </div>
         }
@@ -96,9 +103,9 @@ export default function Checkout() {
         </>}
         {checked && <div className="succesfull-bought">
             <h3>¡Gracias por su compra!</h3>
-            <img src="https://media1.tenor.com/images/e33ea4fca3906f8099b5a7385883b1a1/tenor.gif?itemid=14541086" alt="" width="400" height="400"/>
+            <img src="https://media1.tenor.com/images/e33ea4fca3906f8099b5a7385883b1a1/tenor.gif?itemid=14541086" alt="" width="400" height="400" />
             <h4>ID de su compra: {orderID}</h4>
-            <br/>
+            <br />
             <Link to="/">Volver a la pagina principal</Link>
         </div>}
     </>;
