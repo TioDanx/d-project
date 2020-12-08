@@ -1,40 +1,64 @@
-.checkout-container{
+.checkout-container {
     display: flex;
     flex-direction: column;
-    margin: 40px 50px 0 50px;
+    margin: 40px auto 100px auto;
+    padding: 30px 0px 40px ;
     justify-content: center;
     align-items: center;
+    width: 800px;
+    border: 2px solid black;
+    border-radius: 7px;
 }
-.checkout-form{
+
+.checkout-form {
     width: 700px;
+    
+    text-align: center;
 }
-.top-form{
+
+.top-form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 40px auto 30px auto;
 }
-.bot-form{
+
+.bot-form {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.input-label{
+
+.email-confirmation{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2.2vh;
+    margin-bottom: 50px;
+}
+
+.input-label {
     display: flex;
     flex-direction: column;
 }
-.input{
+
+.input {
     height: 30px;
     width: 300px;
     margin-top: 5px;
 }
-.succesfull-bought{
+
+.succesfull-bought {
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 400px;
-    height: 600px;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.button:disabled{
+    background-color: grey;
+    color: white;
 }

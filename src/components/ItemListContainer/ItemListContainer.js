@@ -36,15 +36,19 @@ function ItemListContainer({ titulo }) {
 
 
     return <>
-        <div className="item-container">
-            <hr />
-            <div className="itemTitle">
-                <h1>{titulo ? titulo : category}</h1>
+        {!loaded && <Loading />}
+        {loaded && <div className="body-wrapper"><div className="welcome-container">
+            <div className="welcome">
+                <h4>¡Bienvenidos!</h4>
+                <span>D-COMMERCE</span>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus doloremque quidem corrupti animi beatae velit odit optio ullam eligendi, voluptates ratione fugit, nihil perspiciatis earum pariatur nemo maxime, accusantium debitis.</h5>
             </div>
-            <hr />
-            {!loaded && <Loading />}
-            {loaded && <ItemList {...{ items }}></ItemList>}
         </div>
+            <div className="item-container">
+
+
+                <ItemList {...{ titulo }} {...{ category }}{...{ items }}></ItemList>
+            </div></div>}
     </>;
 }
 

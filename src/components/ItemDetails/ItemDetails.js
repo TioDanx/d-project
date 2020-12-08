@@ -34,7 +34,7 @@ const ItemDetails = ({ item }) => {
             <div className="item-detail-right">
                 <h2>${item.price}</h2>
                 {!clicked && <ItemCount onAdd={handleAdd} {...{ available }} initial={1} />}
-                {clicked  && <EndShopping />}
+                {clicked && <EndShopping />}
             </div>
         </div>
     </div>;

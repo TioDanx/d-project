@@ -1,0 +1,37 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: black;
+    height: 400px;
+    position: relative;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 20;
+}
+
+.social-media-photo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-redes {
+    display: flex;
+    flex-direction: column;
+}
+
+.legales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    margin: auto 80px auto 80px;
+}
+
+.tecnologias {
+    display: flex;
+    flex-direction: column;
+}

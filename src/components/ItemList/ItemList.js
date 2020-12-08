@@ -4,7 +4,7 @@ import './ItemList.css';
 import { Link } from 'react-router-dom';
 
 
-const ItemList = ({ items }) => {
+const ItemList = ({ items, titulo, category }) => {
 
     const [categories, setCategories] = useState([]);
     const linkStyle = {
@@ -32,8 +32,13 @@ const ItemList = ({ items }) => {
             <h3>Categorias</h3>
             {categories.map(category => <Link style={linkStyle} to={`/${category}`}>{category}</Link>)}
         </div>
-        <div className="item-list">
-            {items.map(item => <Item key={item.id} id={item.id} name={item.name} photo={item.photo} price={item.price}></Item>)}
+        <div className="item-itemtitle">
+            <div className="itemTitle">
+                <h1>{titulo ? titulo : category}</h1>
+            </div>
+            <div className="item-list">
+                {items.map(item => <Item key={item.id} id={item.id} name={item.name} photo={item.photo} price={item.price}></Item>)}
+            </div>
         </div>
     </div>
 }

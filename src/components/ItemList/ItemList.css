@@ -1,20 +1,29 @@
-.item-list{
-    background-color: white;
-    width: 90%;
-    margin:40px 0 20px 0;
+.item-list {
+    width: 100%;
     height: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
-.categories{
+
+.categories {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    font-size: 17px;
+    padding: 60px;
+    color: #eeeeee;
 }
-.categories-items{
+
+.categories-items {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.item-itemtitle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
 }

@@ -7,8 +7,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
-
-
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -21,7 +20,7 @@ function App() {
             <Checkout />
           </Route>
           <Route path="/item/:id">
-            <ItemDetailsContainer></ItemDetailsContainer>
+            <ItemDetailsContainer />
           </Route>
           <Route path="/cart">
             <Cart />
@@ -33,6 +32,7 @@ function App() {
             <ItemListContainer titulo="DESTACADO" />
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

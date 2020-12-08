@@ -6,10 +6,12 @@ import { useCartContext } from '../../context/CartContext';
 
 function CartWidget() {
     const { cantItems } = useCartContext();
-    return <div className="iconos-compra">
-        <Link to="/cart"><span className="cart"></span></Link>
-        <h2>{cantItems}</h2>
-    </div>;
+    return <div className="cart-pos">
+        <div className="iconos-compra">
+            <Link to="/cart"><span className="cart"></span></Link>
+            <span className="cart-counter">{cantItems}</span>
+        </div>;
+        </div>
 }
 
 export default CartWidget;

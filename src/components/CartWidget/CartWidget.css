@@ -1,17 +1,35 @@
-.iconos-compra{
-    float: right;
-    margin: 30px 50px 0 0;
-  }
-
-.cart{
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-image: url(cart.svg);
+.cart-pos {
+  position: absolute;
+  top: 30px;
+  right: 50px;
 }
 
-.cart:hover{
-  filter: invert(100%);
-  transition: 300ms;
+.iconos-compra {
+  position: relative;
+}
+
+.cart {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-image: url(cart.svg);
+  position: relative;
+}
+
+.cart:hover {
+  filter: invert(50%);
+  transition: 200ms;
+}
+
+.cart-counter {
+  position: absolute;
+  color: white;
+  font-size: 16px;
+  font-weight: 1000;
+  padding: 3px 5px;
+  background-color: grey;
+  border-radius: 15px;
+  top: 0px;
+  left: -10px;
 }
