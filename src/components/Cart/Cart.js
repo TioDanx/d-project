@@ -17,7 +17,7 @@ const Cart = () => {
                 <img src={obj.item.photo} alt={obj.item.name} />
                 <div className="cart-item-midpart">
                     <h1>{obj.item.name} x{obj.cant}</h1>
-                    <p style={{marginTop:'20px'}}>{obj.item.description}</p>
+                    <p style={{ marginTop: '20px' }}>{obj.item.description}</p>
                 </div>
                 <div className="cart-item-rightpart">
                     <h2>${obj.item.price}</h2>

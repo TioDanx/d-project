@@ -23,15 +23,16 @@ export default function Checkout() {
     const [orderID, setOrderID] = useState();
     const [loading, setLoading] = useState(false);
     const { cart, clearCart } = useCartContext();
+
     const name = useTextInput("");
     const lastName = useTextInput("");
     const email = useTextInput("");
     const emailRepeat = useTextInput("");
     const phoneNumber = useTextInput("");
+
     let total = 0;
 
     useEffect(() => { cart.length === 0 ? setEmpty(true) : setEmpty(false); }, []);
-
 
     async function createOrder() {
         setLoading(true);
@@ -45,7 +46,7 @@ export default function Checkout() {
             ...buyer,
             items: cart,
             date: firebase.firestore.FieldValue.serverTimestamp(),
-            total: total
+            ...total
         };
         const db = getFirestore();
         const orders = db.collection("orders");
@@ -62,61 +63,64 @@ export default function Checkout() {
                 console.log("No se pudo añadir la compra a la base de datos, intente nuevamente. Error:", err)
             }
         }
-        else alert("Los emails no coinciden"); setLoading(false);
-
+        else {
+            alert("Los emails no coinciden");
+            setLoading(false);
+        }
     }
 
     return <>
         {loading && <Loading />}
         {empty && <Error text="¡Ups! El carro esta vacio" />}
-        {!checked && !loading && !empty && <>
-            {cart.map(obj => <div className="cart-item">
-                <img src={obj.item.photo} alt={obj.item.name} />
-                <div className="cart-item-midpart">
-                    <h1>{obj.item.name} x{obj.cant}</h1>
-                    <p style={{ marginTop: '20px' }}>{obj.item.description}</p>
-                </div>
-                <div className="cart-item-rightpart">
-                    <h2>${obj.item.price}</h2>
-                </div>
-            </div>)}
-            <div className="cart-bottom">
-                {cart.map(obj => { total = obj.item.price * obj.cant + total })}
-                <h1>Total: ${total}</h1>
-            </div>
-            <div className="checkout-container">
-                <div className="checkout-form">
-                    <h1>Para terminar su compra, por favor rellene este formulario</h1>
-                    <br />
-                    <div className="top-form">
-                        <div className="input-label">
-                            <label for="fname">Nombre</label>
-                            <input {...name} className="input" type="text" id="fname" name="fname" />
-                        </div>
-                        <div className="input-label">
-                            <label for="sname">Apellido</label>
-                            <input {...lastName} className="input" type="text" id="sname" name="sname" />
-                        </div>
+        {
+            !checked && !loading && !empty && <>
+                {cart.map(obj => <div className="cart-item">
+                    <img src={obj.item.photo} alt={obj.item.name} />
+                    <div className="cart-item-midpart">
+                        <h1>{obj.item.name} x{obj.cant}</h1>
+                        <p style={{ marginTop: '20px' }}>{obj.item.description}</p>
                     </div>
-                    <div className="bot-form">
-                        <div className="input-label">
-                            <label for="pnumber">Numero de telefono</label>
-                            <input {...phoneNumber} className="input" type="number" id="pnumber" name="pnumber" />
-                        </div>
-                        <div className="input-label">
-                            <label for="email">Email</label>
-                            <input {...email} className="input" type="mail" id="email" name="email" />
-                        </div>
+                    <div className="cart-item-rightpart">
+                        <h2>${obj.item.price}</h2>
                     </div>
-                    <div className="email-confirmation">
-                        <div className="input-label">
-                            <label for="email-repeat">Repita el Email</label>
-                            <input {...emailRepeat} className="input" type="mail" id="email-repeat" name="email-repeat" />
-                        </div>
-                    </div>
-                    <button className="button" disabled={!name.value || !lastName.value || !phoneNumber.value || !email.value || !emailRepeat.value} onClick={createOrder}>Comprar</button>
+                </div>)}
+                <div className="cart-bottom">
+                    {cart.map(obj => { total = obj.item.price * obj.cant + total })}
+                    <h1>Total: ${total}</h1>
                 </div>
-            </div></>
+                <div className="checkout-container">
+                    <div className="checkout-form">
+                        <h1>Para terminar su compra, por favor rellene este formulario</h1>
+                        <br />
+                        <div className="top-form">
+                            <div className="input-label">
+                                <label for="fname">Nombre</label>
+                                <input {...name} className="input" type="text" id="fname" name="fname" />
+                            </div>
+                            <div className="input-label">
+                                <label for="sname">Apellido</label>
+                                <input {...lastName} className="input" type="text" id="sname" name="sname" />
+                            </div>
+                        </div>
+                        <div className="bot-form">
+                            <div className="input-label">
+                                <label for="pnumber">Numero de telefono</label>
+                                <input {...phoneNumber} className="input" type="number" id="pnumber" name="pnumber" />
+                            </div>
+                            <div className="input-label">
+                                <label for="email">Email</label>
+                                <input {...email} className="input" type="mail" id="email" name="email" />
+                            </div>
+                        </div>
+                        <div className="email-confirmation">
+                            <div className="input-label">
+                                <label for="email-repeat">Repita el Email</label>
+                                <input {...emailRepeat} className="input" type="mail" id="email-repeat" name="email-repeat" />
+                            </div>
+                        </div>
+                        <button className="button" disabled={!name.value || !lastName.value || !phoneNumber.value || !email.value || !emailRepeat.value} onClick={createOrder}>Comprar</button>
+                    </div>
+                </div></>
         }
         {
             checked && <div className="succesfull-bought">
